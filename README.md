@@ -1,2 +1,2 @@
 # Web-Project
-Web page for obtaining professors  data for their semesters subjects
+Web page for teachers semester portal with an excel file output
