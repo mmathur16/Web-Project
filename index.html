@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Semester Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h2>Teacher Semester Portal</h2>
+
+    <form method="POST" action="/submit">
+
+        <label>Teacher Name:</label>
+        <input type="text" name="teacher_name" placeholder="Enter your name" required>
+
+        <label>Select Semester Type:</label>
+        <div class="radio-group">
+            <label class="radio-inline">
+                <input type="radio" name="semester_type" value="Even" onclick="showEven()" required> Even
+            </label>
+            <label class="radio-inline">
+                <input type="radio" name="semester_type" value="Odd" onclick="showOdd()" required> Odd
+            </label>
+        </div>
+
+        <label>Select Semester:</label>
+        <div class="semester-options" id="semesterBox"></div>
+
+        <label>Select Department:</label>
+        <select name="department" required>
+            <option value="">Select Department</option>
+            <option value="EEC">EEC</option>
+            <option value="EIC">EIC</option>
+            <option value="BME">BME</option>
+            <option value="EE">EE</option>
+        </select>
+
+        <h3 class="section-title">CO Attainment Entry</h3>
+
+        <table>
+            <tr>
+                <th>CO1</th>
+                <th>CO2</th>
+                <th>CO3</th>
+                <th>CO4</th>
+            </tr>
+            <tr>
+                <td>
+                    Direct <br>
+                    <input type="text" name="co1_direct">
+                    Indirect <br>
+                    <input type="text" name="co1_indirect">
+                </td>
+                <td>
+                    Direct <br>
+                    <input type="text" name="co2_direct">
+                    Indirect <br>
+                    <input type="text" name="co2_indirect">
+                </td>
+                <td>
+                    Direct <br>
+                    <input type="text" name="co3_direct">
+                    Indirect <br>
+                    <input type="text" name="co3_indirect">
+                </td>
+                <td>
+                    Direct <br>
+                    <input type="text" name="co4_direct">
+                    Indirect <br>
+                    <input type="text" name="co4_indirect">
+                </td>
+            </tr>
+        </table>
+
+        <button type="submit">Submit</button>
+        <a class="btn-secondary" href="/view">View Submissions</a>
+    </form>
+</div>
+
+<script>
+    function showEven() {
+        document.getElementById("semesterBox").innerHTML =
+            '<label class="radio-inline"><input type="radio" name="semester" value="2" required> 2</label>' +
+            '<label class="radio-inline"><input type="radio" name="semester" value="4" required> 4</label>' +
+            '<label class="radio-inline"><input type="radio" name="semester" value="6" required> 6</label>' +
+            '<label class="radio-inline"><input type="radio" name="semester" value="8" required> 8</label>';
+    }
+
+    function showOdd() {
+        document.getElementById("semesterBox").innerHTML =
+            '<label class="radio-inline"><input type="radio" name="semester" value="1" required> 1</label>' +
+            '<label class="radio-inline"><input type="radio" name="semester" value="3" required> 3</label>' +
+            '<label class="radio-inline"><input type="radio" name="semester" value="5" required> 5</label>' +
+            '<label class="radio-inline"><input type="radio" name="semester" value="7" required> 7</label>';
+    }
+</script>
+
+</body>
+</html>

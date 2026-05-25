@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>View Submissions</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container wide">
+
+<h2>Submissions</h2>
+
+<a href="/">Back</a>
+
+|
+
+<a href="/export">Download Excel</a>
+
+
+<table>
+
+<tr>
+
+<th>ID</th>
+<th>Teacher</th>
+<th>Type</th>
+<th>Semester</th>
+<th>Department</th>
+
+<th>CO1D</th>
+<th>CO1I</th>
+
+<th>CO2D</th>
+<th>CO2I</th>
+
+<th>CO3D</th>
+<th>CO3I</th>
+
+<th>CO4D</th>
+<th>CO4I</th>
+
+<th>Date</th>
+
+</tr>
+
+
+{% for r in rows %}
+
+<tr>
+
+<td>{{r[0]}}</td>
+
+<td>{{r[1]}}</td>
+
+<td>{{r[2]}}</td>
+
+<td>{{r[3]}}</td>
+
+<td>{{r[4]}}</td>
+
+<td>{{r[5]}}</td>
+<td>{{r[6]}}</td>
+
+<td>{{r[7]}}</td>
+<td>{{r[8]}}</td>
+
+<td>{{r[9]}}</td>
+<td>{{r[10]}}</td>
+
+<td>{{r[11]}}</td>
+<td>{{r[12]}}</td>
+
+<td>{{r[13]}}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</body>
+
+</html>
